@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Worker" msprop:Generator_RowEvHandlerName="WorkerRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkerRowDeleted" msprop:Generator_RowDeletingName="WorkerRowDeleting" msprop:Generator_RowEvArgName="WorkerRowChangeEvent" msprop:Generator_TablePropName="Worker" msprop:Generator_RowChangedName="WorkerRowChanged" msprop:Generator_UserTableName="Worker" msprop:Generator_RowChangingName="WorkerRowChanging" msprop:Generator_RowClassName="WorkerRow" msprop:Generator_TableClassName="WorkerDataTable" msprop:Generator_TableVarName="tableWorker">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:long" />
+              <xs:element name="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_UserColumnName="fio" msprop:Generator_ColumnVarNameInTable="columnfio" type="xs:string" minOccurs="0" />
+              <xs:element name="role" msprop:Generator_ColumnPropNameInTable="roleColumn" msprop:Generator_ColumnPropNameInRow="role" msprop:Generator_UserColumnName="role" msprop:Generator_ColumnVarNameInTable="columnrole" type="xs:string" minOccurs="0" />
+              <xs:element name="inn" msprop:Generator_ColumnPropNameInTable="innColumn" msprop:Generator_ColumnPropNameInRow="inn" msprop:Generator_UserColumnName="inn" msprop:Generator_ColumnVarNameInTable="columninn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkLog" msprop:Generator_RowEvHandlerName="WorkLogRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkLogRowDeleted" msprop:Generator_RowDeletingName="WorkLogRowDeleting" msprop:Generator_RowEvArgName="WorkLogRowChangeEvent" msprop:Generator_TablePropName="WorkLog" msprop:Generator_RowChangedName="WorkLogRowChanged" msprop:Generator_UserTableName="WorkLog" msprop:Generator_RowChangingName="WorkLogRowChanging" msprop:Generator_RowClassName="WorkLogRow" msprop:Generator_TableClassName="WorkLogDataTable" msprop:Generator_TableVarName="tableWorkLog">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:long" />
+              <xs:element name="worker_id" msprop:Generator_ColumnPropNameInTable="worker_idColumn" msprop:Generator_ColumnPropNameInRow="worker_id" msprop:Generator_UserColumnName="worker_id" msprop:Generator_ColumnVarNameInTable="columnworker_id" type="xs:long" minOccurs="0" />
+              <xs:element name="started_at" msprop:Generator_ColumnPropNameInTable="started_atColumn" msprop:Generator_ColumnPropNameInRow="started_at" msprop:Generator_UserColumnName="started_at" msprop:Generator_ColumnVarNameInTable="columnstarted_at" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ended_at" msprop:Generator_ColumnPropNameInTable="ended_atColumn" msprop:Generator_ColumnPropNameInRow="ended_at" msprop:Generator_UserColumnName="ended_at" msprop:Generator_ColumnVarNameInTable="columnended_at" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="work_description" msprop:Generator_ColumnPropNameInTable="work_descriptionColumn" msprop:Generator_ColumnPropNameInRow="work_description" msprop:Generator_UserColumnName="work_description" msprop:Generator_ColumnVarNameInTable="columnwork_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="WorkerKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Worker" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="WorkLogKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkLog" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Worker_WorkLog" msdata:parent="Worker" msdata:child="WorkLog" msdata:parentkey="id" msdata:childkey="worker_id" msprop:Generator_UserParentTable="Worker" msprop:Generator_UserChildTable="WorkLog" msprop:Generator_RelationVarName="relationWorker_WorkLog" msprop:Generator_ChildPropName="GetWorkLogRows" msprop:Generator_ParentPropName="WorkerRow" msprop:Generator_UserRelationName="Worker_WorkLog" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
