@@ -69,6 +69,18 @@
     <Compile Include="forms\workers\EditWorkerForm.Designer.cs">
       <DependentUpon>EditWorkerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\workLog\AddWorkLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\workLog\AddWorkLogForm.Designer.cs">
+      <DependentUpon>AddWorkLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\workLog\EditWorkLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\workLog\EditWorkLogForm.Designer.cs">
+      <DependentUpon>EditWorkLogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\Main.resx">
@@ -79,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\workers\EditWorkerForm.resx">
       <DependentUpon>EditWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\workLog\AddWorkLogForm.resx">
+      <DependentUpon>AddWorkLogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

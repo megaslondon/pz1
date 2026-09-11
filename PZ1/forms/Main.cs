@@ -1,5 +1,6 @@
 ﻿using PZ1.db;
 using PZ1.forms.workers;
+using PZ1.forms.workLog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,15 +85,19 @@ namespace PZ1.forms
             }
 
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void AddWorkLogButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("button4");
+            AddWorkLogForm addWorkLogForm = new AddWorkLogForm(dataSet, dataPath);
+            addWorkLogForm.ShowDialog(this);
+
+            dataGridView1.Refresh();
+            dataGridView2.Refresh();
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void EditWorkLogButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("button5");
         }
-        private void button6_Click(object sender, EventArgs e)
+        private void DeleteWorkLogButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("button6");
         }

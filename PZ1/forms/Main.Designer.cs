@@ -46,9 +46,9 @@
             this.AddWorkerButton = new System.Windows.Forms.Button();
             this.EditWorkerButton = new System.Windows.Forms.Button();
             this.DeleteWorkerButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.AddWorkLogButton = new System.Windows.Forms.Button();
+            this.EditWorkLogButton = new System.Windows.Forms.Button();
+            this.DeleteWorkLogButton = new System.Windows.Forms.Button();
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource1)).BeginInit();
@@ -189,35 +189,35 @@
             this.DeleteWorkerButton.UseVisualStyleBackColor = true;
             this.DeleteWorkerButton.Click += new System.EventHandler(this.DeleteWorkerButton_Click);
             // 
-            // button4
+            // AddWorkLogButton
             // 
-            this.button4.Location = new System.Drawing.Point(640, 221);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 45);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Добавить выполненную работу";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.AddWorkLogButton.Location = new System.Drawing.Point(640, 221);
+            this.AddWorkLogButton.Name = "AddWorkLogButton";
+            this.AddWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.AddWorkLogButton.TabIndex = 5;
+            this.AddWorkLogButton.Text = "Добавить выполненную работу";
+            this.AddWorkLogButton.UseVisualStyleBackColor = true;
+            this.AddWorkLogButton.Click += new System.EventHandler(this.AddWorkLogButton_Click);
             // 
-            // button5
+            // EditWorkLogButton
             // 
-            this.button5.Location = new System.Drawing.Point(640, 287);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 45);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Редактировать выполенную работу";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.EditWorkLogButton.Location = new System.Drawing.Point(640, 287);
+            this.EditWorkLogButton.Name = "EditWorkLogButton";
+            this.EditWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.EditWorkLogButton.TabIndex = 6;
+            this.EditWorkLogButton.Text = "Редактировать выполенную работу";
+            this.EditWorkLogButton.UseVisualStyleBackColor = true;
+            this.EditWorkLogButton.Click += new System.EventHandler(this.EditWorkLogButton_Click);
             // 
-            // button6
+            // DeleteWorkLogButton
             // 
-            this.button6.Location = new System.Drawing.Point(640, 358);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(161, 45);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Удалить выполненную работу";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.DeleteWorkLogButton.Location = new System.Drawing.Point(640, 358);
+            this.DeleteWorkLogButton.Name = "DeleteWorkLogButton";
+            this.DeleteWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.DeleteWorkLogButton.TabIndex = 7;
+            this.DeleteWorkLogButton.Text = "Удалить выполненную работу";
+            this.DeleteWorkLogButton.UseVisualStyleBackColor = true;
+            this.DeleteWorkLogButton.Click += new System.EventHandler(this.DeleteWorkLogButton_Click);
             // 
             // workerBindingSource
             // 
@@ -229,9 +229,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 450);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.DeleteWorkLogButton);
+            this.Controls.Add(this.EditWorkLogButton);
+            this.Controls.Add(this.AddWorkLogButton);
             this.Controls.Add(this.DeleteWorkerButton);
             this.Controls.Add(this.EditWorkerButton);
             this.Controls.Add(this.AddWorkerButton);
@@ -269,8 +269,8 @@
         private System.Windows.Forms.Button AddWorkerButton;
         private System.Windows.Forms.Button EditWorkerButton;
         private System.Windows.Forms.Button DeleteWorkerButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button AddWorkLogButton;
+        private System.Windows.Forms.Button EditWorkLogButton;
+        private System.Windows.Forms.Button DeleteWorkLogButton;
     }
 }
