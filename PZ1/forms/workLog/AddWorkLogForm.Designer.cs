@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
+            this.StartTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.EndTimePicker = new System.Windows.Forms.DateTimePicker();
             this.WorkDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,31 +38,45 @@
             this.goBackButton = new System.Windows.Forms.Button();
             this.AddWorkLogButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WorkerComboBox = new System.Windows.Forms.ComboBox();
+            this.workerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new PZ1.db.DataSet1();
+            this.workerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // StartTimePicker
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(446, 178);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.StartTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.StartTimePicker.Location = new System.Drawing.Point(446, 178);
+            this.StartTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.StartTimePicker.MaxDate = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
+            this.StartTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
+            this.StartTimePicker.Name = "StartTimePicker";
+            this.StartTimePicker.Size = new System.Drawing.Size(265, 22);
+            this.StartTimePicker.TabIndex = 0;
+            this.StartTimePicker.Value = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             // 
-            // dateTimePicker2
+            // EndTimePicker
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.dateTimePicker2.Location = new System.Drawing.Point(446, 226);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker2.TabIndex = 1;
+            this.EndTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.EndTimePicker.Location = new System.Drawing.Point(446, 226);
+            this.EndTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.EndTimePicker.MaxDate = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
+            this.EndTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
+            this.EndTimePicker.Name = "EndTimePicker";
+            this.EndTimePicker.Size = new System.Drawing.Size(265, 22);
+            this.EndTimePicker.TabIndex = 1;
+            this.EndTimePicker.Value = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             // 
             // WorkDescriptionTextBox
             // 
             this.WorkDescriptionTextBox.Location = new System.Drawing.Point(446, 274);
-            this.WorkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WorkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.WorkDescriptionTextBox.Multiline = true;
             this.WorkDescriptionTextBox.Name = "WorkDescriptionTextBox";
             this.WorkDescriptionTextBox.Size = new System.Drawing.Size(265, 80);
@@ -122,42 +137,70 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 136);
+            this.label4.Location = new System.Drawing.Point(362, 136);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "ID работника";
+            this.label4.Text = "Работник";
             // 
-            // textBox1
+            // WorkerComboBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(446, 133);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
-            this.textBox1.TabIndex = 11;
+            this.WorkerComboBox.DataSource = this.workerBindingSource2;
+            this.WorkerComboBox.DisplayMember = "fio";
+            this.WorkerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WorkerComboBox.FormattingEnabled = true;
+            this.WorkerComboBox.Location = new System.Drawing.Point(446, 133);
+            this.WorkerComboBox.Name = "WorkerComboBox";
+            this.WorkerComboBox.Size = new System.Drawing.Size(265, 24);
+            this.WorkerComboBox.TabIndex = 13;
+            this.WorkerComboBox.ValueMember = "id";
+            //this.WorkerComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // workerBindingSource2
+            // 
+            this.workerBindingSource2.DataMember = "Worker";
+            this.workerBindingSource2.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // workerBindingSource1
+            // 
+            this.workerBindingSource1.DataMember = "Worker";
+            this.workerBindingSource1.DataSource = this.dataSet1;
+            // 
+            // workerBindingSource
+            // 
+            this.workerBindingSource.DataMember = "Worker";
+            this.workerBindingSource.DataSource = this.dataSet1;
             // 
             // AddWorkLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.WorkerComboBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddWorkLogButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WorkDescriptionTextBox);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.EndTimePicker);
+            this.Controls.Add(this.StartTimePicker);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddWorkLogForm";
             this.Text = "AddWorkLogForm";
+            this.Load += new System.EventHandler(this.AddWorkLogForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,8 +208,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker StartTimePicker;
+        private System.Windows.Forms.DateTimePicker EndTimePicker;
         private System.Windows.Forms.TextBox WorkDescriptionTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -174,6 +217,10 @@
         private System.Windows.Forms.Button goBackButton;
         private System.Windows.Forms.Button AddWorkLogButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox WorkerComboBox;
+        private System.Windows.Forms.BindingSource workerBindingSource;
+        private db.DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource workerBindingSource1;
+        private System.Windows.Forms.BindingSource workerBindingSource2;
     }
 }

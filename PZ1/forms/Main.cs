@@ -44,6 +44,19 @@ namespace PZ1.forms
 
         }
 
+        private DataSet1.WorkerRow getSelectedWorker()
+        {
+            var view = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
+            var row = (DataSet1.WorkerRow)view.Row;
+            return row;
+        }
+        private DataSet1.WorkLogRow getSelectedWorkLog()
+        {
+            var view = (DataRowView)dataGridView2.CurrentRow.DataBoundItem;
+            var row = (DataSet1.WorkLogRow)view.Row;
+            return row;
+        }
+
         private void AddWorkerButton_Click(object sender, EventArgs e)
         {
             AddWorkerForm addWorkerForm = new AddWorkerForm(dataSet, dataPath);
@@ -55,10 +68,9 @@ namespace PZ1.forms
 
         private void EditWorkerButton_Click(object sender, EventArgs e)
         {
-            var view = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
-            var row = (DataSet1.WorkerRow)view.Row;
+            var selectedWorker = getSelectedWorker();
 
-            EditWorkerForm editWorkerForm = new EditWorkerForm(row, dataPath);
+            EditWorkerForm editWorkerForm = new EditWorkerForm(selectedWorker, dataPath);
             editWorkerForm.ShowDialog(this);
 
             dataGridView1.Refresh();
@@ -73,16 +85,17 @@ namespace PZ1.forms
                 return;
             }
 
-            var view = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
-            var row = (DataSet1.WorkerRow)view.Row;
+            var selectedWorker = getSelectedWorker();
 
-            var res = MessageBox.Show($"Вы действительно хотите удалить {row.fio}?", "Подтверждение", MessageBoxButtons.YesNo);
+            var res = MessageBox.Show($"Вы действительно хотите удалить {selectedWorker.fio}?", "Подтверждение", MessageBoxButtons.YesNo);
 
             if (res == DialogResult.Yes)
             {
-                row.Delete();
+                selectedWorker.Delete();
                 dataSet.WriteXml(dataPath);
             }
+
+            MessageBox.Show("Информация о работнике успешно удалена!");
 
         }
         private void AddWorkLogButton_Click(object sender, EventArgs e)
@@ -95,12 +108,32 @@ namespace PZ1.forms
         }
         private void EditWorkLogButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("button5");
+            var selectedWorkLog = getSelectedWorkLog();
+
+            EditWorkLogForm editWorkLogForm = new EditWorkLogForm(dataSet.Tables["worker"], selectedWorkLog, dataPath);
+            editWorkLogForm.ShowDialog(this);
+
+            dataGridView1.Refresh();
+            dataGridView2.Refresh();
         }
         private void DeleteWorkLogButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("button6");
-        }
+            if (dataGridView2.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите запись выполненной работы для удаления!");
+                return;
+            }
 
+            var selectedWorkLog = getSelectedWorkLog();
+            var res = MessageBox.Show($"Вы действительно хотите удалить запись о выполненной работе с id {selectedWorkLog.id}?", "Подтверждение", MessageBoxButtons.YesNo);
+
+            if (res == DialogResult.Yes)
+            {
+                selectedWorkLog.Delete();
+                dataSet.WriteXml(dataPath);
+            }
+
+            MessageBox.Show("Информация о выполенной работе успешно удалена!");
+        }
     }
 }

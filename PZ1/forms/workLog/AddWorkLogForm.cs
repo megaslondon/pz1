@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace PZ1.forms.workLog
             this.dataSet = ds;
             this.dataPath = path;
             InitializeComponent();
+            StartTimePicker.MaxDate = DateTime.Now;
+            EndTimePicker.MaxDate = DateTime.Now;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,11 +37,53 @@ namespace PZ1.forms.workLog
 
         private void AddWorkLogButton_Click(object sender, EventArgs e)
         {
+            DataSet1.WorkLogRow newRow = dataSet.WorkLog.NewWorkLogRow();
+
+            newRow.work_description = WorkDescriptionTextBox.Text;
+            newRow.started_at = StartTimePicker.Value;
+            newRow.ended_at = EndTimePicker.Value;
+            newRow.worker_id = (long)WorkerComboBox.SelectedValue;
+
+            if (WorkerComboBox.SelectedValue == null)
+            {
+                MessageBox.Show("Не выбран работник, который выполнил работу. Попробуйте еще раз!");
+                return;
+            }
+
+            if (newRow.started_at == null)
+            {
+                MessageBox.Show("Не выбрана дата начала выполненной работы!");
+                return;
+            }
+
+            if(newRow.ended_at == null)
+            {
+                MessageBox.Show("Не выбрана дата конца выполненной работы!");
+                return;
+            }
+
+            if (newRow.work_description.Length==0)
+            {
+                MessageBox.Show("Укажите описание выполенной работы!");
+                return;
+            }
+
+            dataSet.WorkLog.AddWorkLogRow(newRow);
+            dataSet.WriteXml(dataPath);
+            MessageBox.Show("Данные о выполненной работе были успешно добавлены!");
+            this.Close();
 
         }
         private void goBackButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddWorkLogForm_Load(object sender, EventArgs e)
+        {
+            WorkerComboBox.DataSource = dataSet.Tables["worker"];
+            WorkerComboBox.DisplayMember = "fio";
+            WorkerComboBox.ValueMember = "id";
         }
     }
 }
