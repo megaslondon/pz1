@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -164,7 +165,7 @@
             this.AddWorkerButton.Location = new System.Drawing.Point(640, 25);
             this.AddWorkerButton.Name = "AddWorkerButton";
             this.AddWorkerButton.Size = new System.Drawing.Size(161, 45);
-            this.AddWorkerButton.TabIndex = 2;
+            this.AddWorkerButton.TabIndex = 11;
             this.AddWorkerButton.Text = "Добавить работника";
             this.AddWorkerButton.UseVisualStyleBackColor = true;
             this.AddWorkerButton.Click += new System.EventHandler(this.AddWorkerButton_Click);
@@ -174,7 +175,7 @@
             this.EditWorkerButton.Location = new System.Drawing.Point(640, 90);
             this.EditWorkerButton.Name = "EditWorkerButton";
             this.EditWorkerButton.Size = new System.Drawing.Size(161, 45);
-            this.EditWorkerButton.TabIndex = 3;
+            this.EditWorkerButton.TabIndex = 11;
             this.EditWorkerButton.Text = "Редактировать работника";
             this.EditWorkerButton.UseVisualStyleBackColor = true;
             this.EditWorkerButton.Click += new System.EventHandler(this.EditWorkerButton_Click);
@@ -237,6 +238,7 @@
             this.Controls.Add(this.AddWorkerButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
