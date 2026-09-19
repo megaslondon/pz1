@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static PZ1.db.DataSet1;
 
 namespace PZ1.forms.workers
 {
@@ -37,18 +38,58 @@ namespace PZ1.forms.workers
             DataSet1.WorkerRow newRow = dataSet.Worker.NewWorkerRow();
             newRow.fio = FIOTextBox.Text;
             newRow.role = RoleTextBox.Text;
-            newRow.inn = INNTextBox.Text;
+
+            string innText = INNTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(innText))
+            {
+                MessageBox.Show("Введите ИНН!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                INNTextBox.Focus();
+                return;
+            }
+
+            if (innText.Length != 12)
+            {
+                MessageBox.Show("ИНН должен содержать ровно 12 цифр!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                INNTextBox.Focus();
+                INNTextBox.SelectAll();
+                return;
+            }
+
+            foreach (char c in innText)
+            {
+                if (!char.IsDigit(c))
+                {
+                    MessageBox.Show("ИНН должен содержать только цифры!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    INNTextBox.Focus();
+                    INNTextBox.SelectAll();
+                    return;
+                }
+            }
+
+            newRow.inn = innText;
 
             if (string.IsNullOrEmpty(newRow.fio)) {
                 MessageBox.Show("Введите ФИО работника!");
                 return;
             }
 
-            if (newRow.fio.Any(char.IsDigit))
+            foreach (char c in FIOTextBox.Text)
             {
-                MessageBox.Show("ФИО работника не должна содержать чисел!");
-                return;
+                if (!char.IsLetter(c) && c != ' ' && c != '-')
+                {
+                    MessageBox.Show("ФИО должна содержать только буквы!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    FIOTextBox.Focus();
+                    FIOTextBox.SelectAll();
+                    return;
+                }
             }
+
+           newRow.fio= FIOTextBox.Text;
 
             if (string.IsNullOrEmpty(newRow.role))
             {
@@ -56,23 +97,19 @@ namespace PZ1.forms.workers
                 return;
             }
 
-            if (newRow.role.Any(char.IsDigit))
+            foreach (char c in RoleTextBox.Text)
             {
-                MessageBox.Show("Должность работника не должна содержать чисел!");
-                return;
+                if (!char.IsLetter(c) && c != ' ' && c != '-')
+                {
+                    MessageBox.Show("Должность должна содержать только буквы!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    RoleTextBox.Focus();
+                    RoleTextBox.SelectAll();
+                    return;
+                }
             }
 
-            if (string.IsNullOrEmpty(newRow.inn))
-            {
-                MessageBox.Show("Введите ИНН работника!");
-                return;
-            }
-
-            if (newRow.inn.Length!=12)
-            {
-                MessageBox.Show("ИНН работника должно содержать ровно 12 цифр!");
-                return;
-            }
+            newRow.role = RoleTextBox.Text;
 
             dataSet.Worker.AddWorkerRow(newRow);
             dataSet.WriteXml(dataPath);

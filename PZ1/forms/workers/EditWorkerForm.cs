@@ -42,11 +42,22 @@ namespace PZ1.forms.workers
                 return;
             }
 
-            if (workerRow.fio.Any(char.IsDigit))
+            string fioText = FIOTextBox.Text.Trim();
+
+            foreach (char c in fioText)
             {
-                MessageBox.Show("ФИО работника не должна содержать чисел!");
-                return;
+                
+                if (!char.IsLetter(c) && c != ' ' && c != '-')
+                {
+                    MessageBox.Show("ФИО должна содержать только буквы, пробелы и дефисы!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    FIOTextBox.Focus();
+                    FIOTextBox.SelectAll();
+                    return;
+                }
             }
+
+            workerRow.fio =FIOTextBox.Text;
 
             if (string.IsNullOrEmpty(workerRow.role))
             {
@@ -54,11 +65,21 @@ namespace PZ1.forms.workers
                 return;
             }
 
-            if (workerRow.role.Any(char.IsDigit))
+            string roleText = RoleTextBox.Text.Trim();
+
+            foreach (char c in roleText)
             {
-                MessageBox.Show("Должность работника не должна содержать чисел!");
-                return;
+                if (!char.IsLetter(c) && c != ' ' && c != '-')
+                {
+                    MessageBox.Show("Должность должна содержать только буквы, пробелы и дефисы!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    RoleTextBox.Focus();
+                    RoleTextBox.SelectAll();
+                    return;
+                }
             }
+
+            workerRow.role = RoleTextBox.Text;
 
             if (string.IsNullOrEmpty(workerRow.inn))
             {
@@ -71,6 +92,20 @@ namespace PZ1.forms.workers
                 MessageBox.Show("ИНН работника должно содержать ровно 12 цифр!");
                 return;
             }
+
+            foreach (char c in INNTextBox.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    MessageBox.Show("ИНН должен содержать только цифры!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    INNTextBox.Focus();
+                    INNTextBox.SelectAll();
+                    return;
+                }
+            }
+
+            workerRow.inn = INNTextBox.Text;
 
             workerRow.Table.WriteXml(dataPath);
             MessageBox.Show($"Работник {workerRow.fio} был успешно сохранен!");

@@ -116,9 +116,9 @@
             this.label1.Location = new System.Drawing.Point(251, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 15);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 11;
-            this.label1.Text = "ФИО";
+            this.label1.Text = "ФИО :";
             // 
             // FIOTextBox
             // 
