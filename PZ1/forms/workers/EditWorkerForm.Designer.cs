@@ -42,7 +42,7 @@
             // 
             this.EditWorkerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditWorkerButton.Location = new System.Drawing.Point(861, 364);
-            this.EditWorkerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditWorkerButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditWorkerButton.Name = "EditWorkerButton";
             this.EditWorkerButton.Size = new System.Drawing.Size(136, 46);
             this.EditWorkerButton.TabIndex = 17;
@@ -54,7 +54,7 @@
             // 
             this.goBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.goBackButton.Location = new System.Drawing.Point(11, 22);
-            this.goBackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.goBackButton.Margin = new System.Windows.Forms.Padding(4);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(137, 46);
             this.goBackButton.TabIndex = 16;
@@ -77,7 +77,7 @@
             // 
             this.INNTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.INNTextBox.Location = new System.Drawing.Point(310, 281);
-            this.INNTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.INNTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.INNTextBox.Multiline = true;
             this.INNTextBox.Name = "INNTextBox";
             this.INNTextBox.Size = new System.Drawing.Size(685, 48);
@@ -98,7 +98,7 @@
             // 
             this.RoleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RoleTextBox.Location = new System.Drawing.Point(310, 175);
-            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.RoleTextBox.Multiline = true;
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.Size = new System.Drawing.Size(685, 48);
@@ -111,15 +111,15 @@
             this.label1.Location = new System.Drawing.Point(251, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 15);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 11;
-            this.label1.Text = "ФИО";
+            this.label1.Text = "ФИО :";
             // 
             // FIOTextBox
             // 
             this.FIOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FIOTextBox.Location = new System.Drawing.Point(310, 65);
-            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.FIOTextBox.Multiline = true;
             this.FIOTextBox.Name = "FIOTextBox";
             this.FIOTextBox.Size = new System.Drawing.Size(685, 48);
@@ -139,7 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FIOTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditWorkerForm";
             this.Text = "EditWorkerForm";
             this.Load += new System.EventHandler(this.EditWorkerForm_Load);
