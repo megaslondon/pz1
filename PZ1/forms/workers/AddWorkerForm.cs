@@ -1,12 +1,6 @@
 ﻿using PZ1.db;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PZ1.forms.workers
@@ -86,5 +80,52 @@ namespace PZ1.forms.workers
             this.Close();
         }
 
+        private void FIOTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var key = e.KeyChar;
+
+            if(char.IsDigit(key))
+            {
+                e.Handled = true;
+            }
+            else if (key == (char)Keys.Enter)
+            {
+                string fio = FIOTextBox.Text;
+                if (fio.Length != 0) this.ProcessTabKey(true);
+                else e.Handled = true;
+            }
+        }
+
+        private void RoleTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var key = e.KeyChar;
+
+            if (char.IsDigit(key))
+            {
+                MessageBox.Show("go");
+                e.Handled = true;
+            }
+            else if (key == (char)Keys.Enter)
+            {
+                string role = RoleTextBox.Text;
+                if (role.Length != 0) this.ProcessTabKey(true);
+                else e.Handled = true;
+            }
+        }
+
+        private void INNTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var key = e.KeyChar;
+            if (key == (char)Keys.Enter)
+            {
+                string inn = INNTextBox.Text;
+                if (inn.Length == 12) this.ProcessTabKey(true);
+                else e.Handled = true;
+            }
+            else if (key!=(char)Keys.Back&&!char.IsDigit(key))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

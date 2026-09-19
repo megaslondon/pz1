@@ -93,9 +93,8 @@ namespace PZ1.forms
             {
                 selectedWorker.Delete();
                 dataSet.WriteXml(dataPath);
+                MessageBox.Show("Информация о работнике успешно удалена!");
             }
-
-            MessageBox.Show("Информация о работнике успешно удалена!");
 
         }
         private void AddWorkLogButton_Click(object sender, EventArgs e)
@@ -131,9 +130,8 @@ namespace PZ1.forms
             {
                 selectedWorkLog.Delete();
                 dataSet.WriteXml(dataPath);
+                MessageBox.Show("Информация о выполенной работе успешно удалена!");
             }
-
-            MessageBox.Show("Информация о выполенной работе успешно удалена!");
         }
     }
 }

@@ -49,8 +49,10 @@ namespace PZ1.forms.workers
             this.FIOTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.FIOTextBox.Multiline = true;
             this.FIOTextBox.Name = "FIOTextBox";
+            this.FIOTextBox.ShortcutsEnabled = false;
             this.FIOTextBox.Size = new System.Drawing.Size(515, 40);
             this.FIOTextBox.TabIndex = 0;
+            this.FIOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIOTextBox_KeyPress);
             // 
             // label1
             // 
@@ -79,8 +81,10 @@ namespace PZ1.forms.workers
             this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTextBox.Multiline = true;
             this.RoleTextBox.Name = "RoleTextBox";
+            this.RoleTextBox.ShortcutsEnabled = false;
             this.RoleTextBox.Size = new System.Drawing.Size(515, 40);
-            this.RoleTextBox.TabIndex = 4;
+            this.RoleTextBox.TabIndex = 1;
+            this.RoleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RoleTextBox_KeyPress);
             // 
             // label3
             // 
@@ -96,17 +100,20 @@ namespace PZ1.forms.workers
             // INNTextBox
             // 
             this.INNTextBox.Location = new System.Drawing.Point(272, 222);
+            this.INNTextBox.MaxLength = 12;
             this.INNTextBox.Multiline = true;
             this.INNTextBox.Name = "INNTextBox";
+            this.INNTextBox.ShortcutsEnabled = false;
             this.INNTextBox.Size = new System.Drawing.Size(515, 40);
-            this.INNTextBox.TabIndex = 6;
+            this.INNTextBox.TabIndex = 2;
+            this.INNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INNTextBox_KeyPress);
             // 
             // goBackButton
             // 
             this.goBackButton.Location = new System.Drawing.Point(12, 12);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(103, 37);
-            this.goBackButton.TabIndex = 8;
+            this.goBackButton.TabIndex = 4;
             this.goBackButton.Text = "Назад";
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
@@ -116,7 +123,7 @@ namespace PZ1.forms.workers
             this.AddWorkerButton.Location = new System.Drawing.Point(685, 289);
             this.AddWorkerButton.Name = "AddWorkerButton";
             this.AddWorkerButton.Size = new System.Drawing.Size(102, 37);
-            this.AddWorkerButton.TabIndex = 9;
+            this.AddWorkerButton.TabIndex = 3;
             this.AddWorkerButton.Text = "Добавить";
             this.AddWorkerButton.UseVisualStyleBackColor = true;
             this.AddWorkerButton.Click += new System.EventHandler(this.AddWorkerButton_Click);

@@ -42,10 +42,10 @@
             // 
             this.EditWorkerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditWorkerButton.Location = new System.Drawing.Point(861, 364);
-            this.EditWorkerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditWorkerButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditWorkerButton.Name = "EditWorkerButton";
             this.EditWorkerButton.Size = new System.Drawing.Size(136, 46);
-            this.EditWorkerButton.TabIndex = 17;
+            this.EditWorkerButton.TabIndex = 3;
             this.EditWorkerButton.Text = "Сохранить";
             this.EditWorkerButton.UseVisualStyleBackColor = true;
             this.EditWorkerButton.Click += new System.EventHandler(this.EditWorkerButton_Click);
@@ -54,10 +54,10 @@
             // 
             this.goBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.goBackButton.Location = new System.Drawing.Point(11, 22);
-            this.goBackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.goBackButton.Margin = new System.Windows.Forms.Padding(4);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(137, 46);
-            this.goBackButton.TabIndex = 16;
+            this.goBackButton.TabIndex = 4;
             this.goBackButton.Text = "Назад";
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
@@ -77,11 +77,14 @@
             // 
             this.INNTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.INNTextBox.Location = new System.Drawing.Point(310, 281);
-            this.INNTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.INNTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.INNTextBox.MaxLength = 12;
             this.INNTextBox.Multiline = true;
             this.INNTextBox.Name = "INNTextBox";
+            this.INNTextBox.ShortcutsEnabled = false;
             this.INNTextBox.Size = new System.Drawing.Size(685, 48);
-            this.INNTextBox.TabIndex = 14;
+            this.INNTextBox.TabIndex = 2;
+            this.INNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INNTextBox_KeyPress);
             // 
             // label2
             // 
@@ -98,11 +101,13 @@
             // 
             this.RoleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RoleTextBox.Location = new System.Drawing.Point(310, 175);
-            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.RoleTextBox.Multiline = true;
             this.RoleTextBox.Name = "RoleTextBox";
+            this.RoleTextBox.ShortcutsEnabled = false;
             this.RoleTextBox.Size = new System.Drawing.Size(685, 48);
-            this.RoleTextBox.TabIndex = 12;
+            this.RoleTextBox.TabIndex = 1;
+            this.RoleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RoleTextBox_KeyPress);
             // 
             // label1
             // 
@@ -119,11 +124,13 @@
             // 
             this.FIOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FIOTextBox.Location = new System.Drawing.Point(310, 65);
-            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.FIOTextBox.Multiline = true;
             this.FIOTextBox.Name = "FIOTextBox";
+            this.FIOTextBox.ShortcutsEnabled = false;
             this.FIOTextBox.Size = new System.Drawing.Size(685, 48);
-            this.FIOTextBox.TabIndex = 10;
+            this.FIOTextBox.TabIndex = 0;
+            this.FIOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIOTextBox_KeyPress);
             // 
             // EditWorkerForm
             // 
@@ -139,7 +146,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FIOTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditWorkerForm";
             this.Text = "EditWorkerForm";
             this.Load += new System.EventHandler(this.EditWorkerForm_Load);

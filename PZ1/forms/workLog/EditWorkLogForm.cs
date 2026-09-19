@@ -76,5 +76,18 @@ namespace PZ1.forms.workLog
             MessageBox.Show("Данные о выполненной работе были успешно обновлены!");
             this.Close();
         }
+
+        private void WorkDescriptionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool hasRealText = WorkDescriptionTextBox.Text.Any(c => !char.IsControl(c) && !char.IsWhiteSpace(c));
+
+            var key = e.KeyChar;
+
+            if (key == (char)Keys.Enter)
+            {
+                if (hasRealText) this.ProcessTabKey(true);
+                else e.Handled = true;
+            }
+        }
     }
 }

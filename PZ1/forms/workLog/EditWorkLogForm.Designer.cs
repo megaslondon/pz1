@@ -49,7 +49,7 @@
             this.WorkerComboBox.Location = new System.Drawing.Point(446, 133);
             this.WorkerComboBox.Name = "WorkerComboBox";
             this.WorkerComboBox.Size = new System.Drawing.Size(265, 24);
-            this.WorkerComboBox.TabIndex = 23;
+            this.WorkerComboBox.TabIndex = 0;
             this.WorkerComboBox.ValueMember = "id";
             // 
             // label4
@@ -69,7 +69,7 @@
             this.AddWorkLogButton.Location = new System.Drawing.Point(608, 382);
             this.AddWorkLogButton.Name = "AddWorkLogButton";
             this.AddWorkLogButton.Size = new System.Drawing.Size(103, 37);
-            this.AddWorkLogButton.TabIndex = 21;
+            this.AddWorkLogButton.TabIndex = 4;
             this.AddWorkLogButton.Text = "Добавить";
             this.AddWorkLogButton.UseVisualStyleBackColor = true;
             this.AddWorkLogButton.Click += new System.EventHandler(this.AddWorkLogButton_Click);
@@ -80,7 +80,7 @@
             this.goBackButton.Location = new System.Drawing.Point(12, 12);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(103, 37);
-            this.goBackButton.TabIndex = 20;
+            this.goBackButton.TabIndex = 5;
             this.goBackButton.Text = "Назад";
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
@@ -126,7 +126,8 @@
             this.WorkDescriptionTextBox.Multiline = true;
             this.WorkDescriptionTextBox.Name = "WorkDescriptionTextBox";
             this.WorkDescriptionTextBox.Size = new System.Drawing.Size(265, 80);
-            this.WorkDescriptionTextBox.TabIndex = 16;
+            this.WorkDescriptionTextBox.TabIndex = 3;
+            this.WorkDescriptionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WorkDescriptionTextBox_KeyPress);
             // 
             // EndTimePicker
             // 
@@ -138,7 +139,7 @@
             this.EndTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
             this.EndTimePicker.Name = "EndTimePicker";
             this.EndTimePicker.Size = new System.Drawing.Size(265, 22);
-            this.EndTimePicker.TabIndex = 15;
+            this.EndTimePicker.TabIndex = 2;
             this.EndTimePicker.Value = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             // 
             // StartTimePicker
@@ -151,7 +152,7 @@
             this.StartTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
             this.StartTimePicker.Name = "StartTimePicker";
             this.StartTimePicker.Size = new System.Drawing.Size(265, 22);
-            this.StartTimePicker.TabIndex = 14;
+            this.StartTimePicker.TabIndex = 1;
             this.StartTimePicker.Value = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             // 
             // EditWorkLogForm
