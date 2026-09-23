@@ -63,7 +63,6 @@ namespace PZ1.forms.workers
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "ФИО :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -95,7 +94,6 @@ namespace PZ1.forms.workers
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "ИНН :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // INNTextBox
             // 
@@ -132,7 +130,7 @@ namespace PZ1.forms.workers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1028, 554);
             this.Controls.Add(this.AddWorkerButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.label3);

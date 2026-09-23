@@ -229,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 450);
+            this.ClientSize = new System.Drawing.Size(831, 504);
             this.Controls.Add(this.DeleteWorkLogButton);
             this.Controls.Add(this.EditWorkLogButton);
             this.Controls.Add(this.AddWorkLogButton);

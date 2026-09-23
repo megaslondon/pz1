@@ -149,7 +149,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditWorkerForm";
             this.Text = "EditWorkerForm";
-            this.Load += new System.EventHandler(this.EditWorkerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

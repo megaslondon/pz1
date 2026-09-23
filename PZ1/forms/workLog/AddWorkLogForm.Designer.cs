@@ -92,7 +92,6 @@
             this.label1.Size = new System.Drawing.Size(90, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Дата начала";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -103,7 +102,6 @@
             this.label2.Size = new System.Drawing.Size(112, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Дата окончания";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

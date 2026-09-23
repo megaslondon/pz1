@@ -68,6 +68,12 @@ namespace PZ1.forms
 
         private void EditWorkerButton_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("No worker for edition was chosen!");
+                return;
+            }
+
             var selectedWorker = getSelectedWorker();
 
             EditWorkerForm editWorkerForm = new EditWorkerForm(selectedWorker, dataPath);
@@ -107,6 +113,12 @@ namespace PZ1.forms
         }
         private void EditWorkLogButton_Click(object sender, EventArgs e)
         {
+            if (dataGridView2.CurrentRow == null)
+            {
+                MessageBox.Show("No worklog to edition was not chosen!");
+                return;
+            }
+
             var selectedWorkLog = getSelectedWorkLog();
 
             EditWorkLogForm editWorkLogForm = new EditWorkLogForm(dataSet.Tables["worker"], selectedWorkLog, dataPath);
