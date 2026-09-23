@@ -2,14 +2,8 @@
 using PZ1.forms.workers;
 using PZ1.forms.workLog;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PZ1.forms
@@ -32,16 +26,6 @@ namespace PZ1.forms
             }
             dataGridView1.DataSource = dataSet.Worker;
             dataGridView2.DataSource = dataSet.WorkLog;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private DataSet1.WorkerRow getSelectedWorker()
@@ -70,7 +54,7 @@ namespace PZ1.forms
         {
             if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("No worker for edition was chosen!");
+                MessageBox.Show("Выберите работника для редактирования!");
                 return;
             }
 
@@ -105,6 +89,11 @@ namespace PZ1.forms
         }
         private void AddWorkLogButton_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 1)
+            {
+                MessageBox.Show("На данный момент нет ни одного работника, которому можно присвоить выполненную работу - список работников пуст!");
+                return;
+            }
             AddWorkLogForm addWorkLogForm = new AddWorkLogForm(dataSet, dataPath);
             addWorkLogForm.ShowDialog(this);
 
@@ -115,7 +104,7 @@ namespace PZ1.forms
         {
             if (dataGridView2.CurrentRow == null)
             {
-                MessageBox.Show("No worklog to edition was not chosen!");
+                MessageBox.Show("Выберите информацию о выполненной работе!");
                 return;
             }
 

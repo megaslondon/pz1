@@ -49,10 +49,9 @@
       <xs:selector xpath=".//mstns:WorkLog" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:keyref name="Worker_WorkLog" refer="WorkerKey1" msprop:rel_Generator_UserParentTable="Worker" msprop:rel_Generator_UserChildTable="WorkLog" msprop:rel_Generator_RelationVarName="relationWorker_WorkLog" msprop:rel_Generator_ChildPropName="GetWorkLogRows" msprop:rel_Generator_ParentPropName="WorkerRow" msprop:rel_Generator_UserRelationName="Worker_WorkLog">
+      <xs:selector xpath=".//mstns:WorkLog" />
+      <xs:field xpath="mstns:worker_id" />
+    </xs:keyref>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="Worker_WorkLog" msdata:parent="Worker" msdata:child="WorkLog" msdata:parentkey="id" msdata:childkey="worker_id" msprop:Generator_UserParentTable="Worker" msprop:Generator_UserChildTable="WorkLog" msprop:Generator_RelationVarName="relationWorker_WorkLog" msprop:Generator_ChildPropName="GetWorkLogRows" msprop:Generator_ParentPropName="WorkerRow" msprop:Generator_UserRelationName="Worker_WorkLog" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

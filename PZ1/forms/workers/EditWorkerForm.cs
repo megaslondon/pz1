@@ -21,7 +21,6 @@ namespace PZ1.forms.workers
             this.INNTextBox.Text = row.inn;
         }
 
-
         private void goBackButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -29,24 +28,31 @@ namespace PZ1.forms.workers
 
         private void EditWorkerButton_Click(object sender, EventArgs e)
         {
-            workerRow.fio = FIOTextBox.Text;
-            workerRow.role = RoleTextBox.Text;
-            workerRow.inn = INNTextBox.Text;
+            string fio = FIOTextBox.Text.Trim();
+            string role = RoleTextBox.Text.Trim();
+            string inn = INNTextBox.Text.Trim();
 
-            if (string.IsNullOrEmpty(workerRow.fio))
+            if (string.IsNullOrEmpty(fio))
             {
                 MessageBox.Show("Введите ФИО работника!");
                 return;
             }
 
-
-            if (string.IsNullOrEmpty(workerRow.role))
+            if (string.IsNullOrEmpty(role))
             {
                 MessageBox.Show("Введите должность работника!");
                 return;
             }
 
-            if (workerRow.inn.Length != 12)
+            if (string.IsNullOrEmpty(inn))
+            {
+                MessageBox.Show("Введите ИНН!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                INNTextBox.Focus();
+                return;
+            }
+
+            if (inn.Length != 12)
             {
                 MessageBox.Show("ИНН должен содержать ровно 12 цифр!", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,10 +61,9 @@ namespace PZ1.forms.workers
                 return;
             }
 
-
-            workerRow.fio = FIOTextBox.Text;
-            workerRow.role = RoleTextBox.Text;
-            workerRow.inn = INNTextBox.Text;
+            workerRow.fio = fio;
+            workerRow.role = role;
+            workerRow.inn = inn;
 
             workerRow.Table.WriteXml(dataPath);
             MessageBox.Show($"Работник {workerRow.fio} был успешно сохранен!");
@@ -87,14 +92,11 @@ namespace PZ1.forms.workers
 
             if (char.IsDigit(key))
             {
-                if (char.IsDigit(key))
+                if (RoleTextBox.SelectionStart == 0 || !RoleTextBox.Text.Any(char.IsLetter))
                 {
-                    foreach (char c in RoleTextBox.Text)
-                    {
-                        if (char.IsLetter(c)) return;
-                    }
-                    MessageBox.Show("sadasd", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Числовое значение в названии должности допустимо только тогда, когда ему предшествовало строковое описание!", "Ошибка!", MessageBoxButtons.OK);
                     e.Handled = true;
+                    return;
                 }
             }
             else if (key == (char)Keys.Enter)

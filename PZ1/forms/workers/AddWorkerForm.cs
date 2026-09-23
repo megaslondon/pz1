@@ -1,5 +1,6 @@
 ﻿using PZ1.db;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PZ1.forms.workers
@@ -24,17 +25,23 @@ namespace PZ1.forms.workers
         private void AddWorkerButton_Click(object sender, EventArgs e)
         {
             DataSet1.WorkerRow newRow = dataSet.Worker.NewWorkerRow();
-            newRow.fio = FIOTextBox.Text;
-            newRow.role = RoleTextBox.Text;
 
-            string innText = INNTextBox.Text.Trim();
+            string fio = FIOTextBox.Text.Trim();
+            string role = RoleTextBox.Text.Trim(); 
+            string inn = INNTextBox.Text.Trim();
 
-            if (string.IsNullOrEmpty(newRow.fio)) {
+            if (string.IsNullOrEmpty(fio)) {
                 MessageBox.Show("Введите ФИО работника!");
                 return;
             }
 
-            if (string.IsNullOrEmpty(innText))
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Введите должность работника!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(inn))
             {
                 MessageBox.Show("Введите ИНН!", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -42,13 +49,7 @@ namespace PZ1.forms.workers
                 return;
             }
 
-            if (string.IsNullOrEmpty(newRow.role))
-            {
-                MessageBox.Show("Введите должность работника!");
-                return;
-            }
-
-            if (innText.Length != 12)
+            if (inn.Length != 12)
             {
                 MessageBox.Show("ИНН должен содержать ровно 12 цифр!", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -57,9 +58,9 @@ namespace PZ1.forms.workers
                 return;
             }
 
-            newRow.fio= FIOTextBox.Text;
-            newRow.inn = innText;
-            newRow.role = RoleTextBox.Text;
+            newRow.fio = fio;
+            newRow.role = role;
+            newRow.inn = inn;
 
             dataSet.Worker.AddWorkerRow(newRow);
             dataSet.WriteXml(dataPath);
@@ -89,16 +90,14 @@ namespace PZ1.forms.workers
 
             if (char.IsDigit(key))
             {
-                if (char.IsDigit(key))
+                if (RoleTextBox.SelectionStart == 0 || !RoleTextBox.Text.Any(char.IsLetter))
                 {
-                    foreach (char c in RoleTextBox.Text)
-                    {
-                        if (char.IsLetter(c)) return;
-                    }
-                    MessageBox.Show("sadasd", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Числовое значение в названии должности допустимо только тогда, когда ему предшествовало строковое описание!", "Ошибка!", MessageBoxButtons.OK);
                     e.Handled = true;
+                    return;
                 }
             }
+
             else if (key == (char)Keys.Enter)
             {
                 string role = RoleTextBox.Text;

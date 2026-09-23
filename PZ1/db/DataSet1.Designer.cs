@@ -235,6 +235,14 @@ namespace PZ1.db {
             base.Tables.Add(this.tableWorker);
             this.tableWorkLog = new WorkLogDataTable();
             base.Tables.Add(this.tableWorkLog);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("Worker_WorkLog", new global::System.Data.DataColumn[] {
+                        this.tableWorker.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableWorkLog.worker_idColumn});
+            this.tableWorkLog.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationWorker_WorkLog = new global::System.Data.DataRelation("Worker_WorkLog", new global::System.Data.DataColumn[] {
                         this.tableWorker.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableWorkLog.worker_idColumn}, false);
