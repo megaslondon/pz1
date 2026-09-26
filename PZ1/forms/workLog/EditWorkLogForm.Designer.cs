@@ -66,9 +66,9 @@
             // AddWorkLogButton
             // 
             this.AddWorkLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.AddWorkLogButton.Location = new System.Drawing.Point(178, 236);
+            this.AddWorkLogButton.Location = new System.Drawing.Point(203, 209);
             this.AddWorkLogButton.Name = "AddWorkLogButton";
-            this.AddWorkLogButton.Size = new System.Drawing.Size(103, 37);
+            this.AddWorkLogButton.Size = new System.Drawing.Size(98, 32);
             this.AddWorkLogButton.TabIndex = 4;
             this.AddWorkLogButton.Text = "Добавить";
             this.AddWorkLogButton.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // goBackButton
             // 
             this.goBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.goBackButton.Location = new System.Drawing.Point(302, 236);
+            this.goBackButton.Location = new System.Drawing.Point(307, 209);
             this.goBackButton.Name = "goBackButton";
-            this.goBackButton.Size = new System.Drawing.Size(103, 37);
+            this.goBackButton.Size = new System.Drawing.Size(98, 32);
             this.goBackButton.TabIndex = 5;
             this.goBackButton.Text = "Отменить";
             this.goBackButton.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label3.Location = new System.Drawing.Point(10, 173);
+            this.label3.Location = new System.Drawing.Point(10, 158);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 16);
@@ -100,7 +100,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label2.Location = new System.Drawing.Point(21, 110);
+            this.label2.Location = new System.Drawing.Point(21, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 16);
@@ -111,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label1.Location = new System.Drawing.Point(45, 65);
+            this.label1.Location = new System.Drawing.Point(46, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 16);
@@ -121,7 +121,7 @@
             // WorkDescriptionTextBox
             // 
             this.WorkDescriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.WorkDescriptionTextBox.Location = new System.Drawing.Point(140, 149);
+            this.WorkDescriptionTextBox.Location = new System.Drawing.Point(140, 134);
             this.WorkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.WorkDescriptionTextBox.Multiline = true;
             this.WorkDescriptionTextBox.Name = "WorkDescriptionTextBox";
@@ -133,7 +133,7 @@
             // 
             this.EndTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.EndTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.EndTimePicker.Location = new System.Drawing.Point(140, 106);
+            this.EndTimePicker.Location = new System.Drawing.Point(140, 93);
             this.EndTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EndTimePicker.MaxDate = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             this.EndTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
@@ -146,7 +146,7 @@
             // 
             this.StartTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.StartTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.StartTimePicker.Location = new System.Drawing.Point(140, 58);
+            this.StartTimePicker.Location = new System.Drawing.Point(140, 53);
             this.StartTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.StartTimePicker.MaxDate = new System.DateTime(2026, 9, 11, 0, 0, 0, 0);
             this.StartTimePicker.MinDate = new System.DateTime(2026, 7, 11, 0, 0, 0, 0);
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 285);
+            this.ClientSize = new System.Drawing.Size(410, 246);
             this.Controls.Add(this.WorkerComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.AddWorkLogButton);

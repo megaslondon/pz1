@@ -41,7 +41,7 @@
             // EditWorkerButton
             // 
             this.EditWorkerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditWorkerButton.Location = new System.Drawing.Point(153, 164);
+            this.EditWorkerButton.Location = new System.Drawing.Point(143, 127);
             this.EditWorkerButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditWorkerButton.Name = "EditWorkerButton";
             this.EditWorkerButton.Size = new System.Drawing.Size(82, 36);
@@ -53,7 +53,7 @@
             // goBackButton
             // 
             this.goBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goBackButton.Location = new System.Drawing.Point(243, 164);
+            this.goBackButton.Location = new System.Drawing.Point(233, 127);
             this.goBackButton.Margin = new System.Windows.Forms.Padding(4);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(82, 36);
@@ -66,7 +66,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(43, 128);
+            this.label3.Location = new System.Drawing.Point(43, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 15);
@@ -76,13 +76,12 @@
             // INNTextBox
             // 
             this.INNTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.INNTextBox.Location = new System.Drawing.Point(82, 120);
+            this.INNTextBox.Location = new System.Drawing.Point(82, 95);
             this.INNTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.INNTextBox.MaxLength = 12;
-            this.INNTextBox.Multiline = true;
             this.INNTextBox.Name = "INNTextBox";
             this.INNTextBox.ShortcutsEnabled = false;
-            this.INNTextBox.Size = new System.Drawing.Size(243, 31);
+            this.INNTextBox.Size = new System.Drawing.Size(233, 21);
             this.INNTextBox.TabIndex = 2;
             this.INNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INNTextBox_KeyPress);
             // 
@@ -90,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(6, 70);
+            this.label2.Location = new System.Drawing.Point(7, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 15);
@@ -100,12 +99,11 @@
             // RoleTextBox
             // 
             this.RoleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RoleTextBox.Location = new System.Drawing.Point(82, 61);
+            this.RoleTextBox.Location = new System.Drawing.Point(82, 55);
             this.RoleTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.RoleTextBox.Multiline = true;
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.ShortcutsEnabled = false;
-            this.RoleTextBox.Size = new System.Drawing.Size(243, 34);
+            this.RoleTextBox.Size = new System.Drawing.Size(233, 21);
             this.RoleTextBox.TabIndex = 1;
             this.RoleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RoleTextBox_KeyPress);
             // 
@@ -123,20 +121,18 @@
             // FIOTextBox
             // 
             this.FIOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIOTextBox.Location = new System.Drawing.Point(82, 8);
+            this.FIOTextBox.Location = new System.Drawing.Point(82, 14);
             this.FIOTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.FIOTextBox.Multiline = true;
             this.FIOTextBox.Name = "FIOTextBox";
             this.FIOTextBox.ShortcutsEnabled = false;
-            this.FIOTextBox.Size = new System.Drawing.Size(243, 33);
+            this.FIOTextBox.Size = new System.Drawing.Size(233, 21);
             this.FIOTextBox.TabIndex = 0;
-            this.FIOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIOTextBox_KeyPress);
             // 
             // EditWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 208);
+            this.ClientSize = new System.Drawing.Size(322, 171);
             this.Controls.Add(this.EditWorkerButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.label3);
