@@ -9,19 +9,21 @@ namespace PZ1.forms.workLog
     public partial class EditWorkLogForm : Form
     {
         private DataSet1.WorkLogRow workLogRow;
+        private DataSet1.WorkerRow workerRow;
         private DataTable _workersTable;
         private string dataPath;
 
-        public EditWorkLogForm(DataTable workersTable, DataSet1.WorkLogRow row, string path)
+        public EditWorkLogForm(DataTable workersTable, DataSet1.WorkerRow sw, DataSet1.WorkLogRow row, string path)
         {
             InitializeComponent();
+            this.workerRow = sw;
             this._workersTable = workersTable;
             this.workLogRow = row;
             this.dataPath = path;
-            this.WorkerComboBox.SelectedValue = Convert.ToInt64(row.worker_id);
             this.StartTimePicker.Value = row.started_at;
             this.EndTimePicker.Value = row.ended_at;
             this.WorkDescriptionTextBox.Text = row.work_description;
+
         }
 
         private void EditWorkLogForm_Load(object sender, EventArgs e)
@@ -29,6 +31,8 @@ namespace PZ1.forms.workLog
             WorkerComboBox.DataSource = _workersTable;
             WorkerComboBox.DisplayMember = "fio";
             WorkerComboBox.ValueMember = "id";
+            this.WorkerComboBox.SelectedValue = this.workLogRow.worker_id;
+            this.WorkerComboBox.Enabled = false;
         }
 
         private void goBackButton_Click(object sender, EventArgs e)

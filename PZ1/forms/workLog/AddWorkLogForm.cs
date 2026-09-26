@@ -7,13 +7,17 @@ namespace PZ1.forms.workLog
 {
     public partial class AddWorkLogForm : Form
     {
-        private DataSet1 dataSet;
+        private DataSet1.WorkerRow selectedWorker;
         private string dataPath;
-        public AddWorkLogForm(DataSet1 ds, string path)
+        private DataSet1 dataSet;
+        public AddWorkLogForm(DataSet1 ds, DataSet1.WorkerRow sw, string path)
         {
-            this.dataSet = ds;
+            this.selectedWorker = sw;
             this.dataPath = path;
+            this.dataSet = ds;
+
             InitializeComponent();
+            
             StartTimePicker.MaxDate = DateTime.Now;
             EndTimePicker.MaxDate = DateTime.Now;
         }
@@ -21,7 +25,6 @@ namespace PZ1.forms.workLog
         private void AddWorkLogButton_Click(object sender, EventArgs e)
         {
             DataSet1.WorkLogRow newRow = dataSet.WorkLog.NewWorkLogRow();
-
             newRow.work_description = WorkDescriptionTextBox.Text;
             newRow.started_at = StartTimePicker.Value;
             newRow.ended_at = EndTimePicker.Value;
@@ -64,9 +67,11 @@ namespace PZ1.forms.workLog
 
         private void AddWorkLogForm_Load(object sender, EventArgs e)
         {
-            WorkerComboBox.DataSource = dataSet.Tables["worker"];
+            WorkerComboBox.DataSource = new[] { selectedWorker };
             WorkerComboBox.DisplayMember = "fio";
             WorkerComboBox.ValueMember = "id";
+            WorkerComboBox.Enabled = false;
+
         }
         private void WorkDescriptionTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

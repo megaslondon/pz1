@@ -38,11 +38,6 @@
             this.workerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new PZ1.db.DataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workdescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddWorkerButton = new System.Windows.Forms.Button();
             this.EditWorkerButton = new System.Windows.Forms.Button();
@@ -51,6 +46,11 @@
             this.EditWorkLogButton = new System.Windows.Forms.Button();
             this.DeleteWorkLogButton = new System.Windows.Forms.Button();
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workdescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -61,6 +61,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -71,31 +72,35 @@
             this.dataGridView1.DataSource = this.workerBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // fioDataGridViewTextBoxColumn
             // 
             this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
-            this.fioDataGridViewTextBoxColumn.HeaderText = "fio";
+            this.fioDataGridViewTextBoxColumn.HeaderText = "ФИО";
             this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
             // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Должность";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             // 
             // innDataGridViewTextBoxColumn
             // 
             this.innDataGridViewTextBoxColumn.DataPropertyName = "inn";
-            this.innDataGridViewTextBoxColumn.HeaderText = "inn";
+            this.innDataGridViewTextBoxColumn.HeaderText = "ИНН";
             this.innDataGridViewTextBoxColumn.Name = "innDataGridViewTextBoxColumn";
             // 
             // workerBindingSource1
@@ -110,6 +115,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,38 +127,9 @@
             this.dataGridView2.DataSource = this.workLogBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(12, 196);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(547, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(345, 150);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // workeridDataGridViewTextBoxColumn
-            // 
-            this.workeridDataGridViewTextBoxColumn.DataPropertyName = "worker_id";
-            this.workeridDataGridViewTextBoxColumn.HeaderText = "worker_id";
-            this.workeridDataGridViewTextBoxColumn.Name = "workeridDataGridViewTextBoxColumn";
-            // 
-            // startedatDataGridViewTextBoxColumn
-            // 
-            this.startedatDataGridViewTextBoxColumn.DataPropertyName = "started_at";
-            this.startedatDataGridViewTextBoxColumn.HeaderText = "started_at";
-            this.startedatDataGridViewTextBoxColumn.Name = "startedatDataGridViewTextBoxColumn";
-            // 
-            // endedatDataGridViewTextBoxColumn
-            // 
-            this.endedatDataGridViewTextBoxColumn.DataPropertyName = "ended_at";
-            this.endedatDataGridViewTextBoxColumn.HeaderText = "ended_at";
-            this.endedatDataGridViewTextBoxColumn.Name = "endedatDataGridViewTextBoxColumn";
-            // 
-            // workdescriptionDataGridViewTextBoxColumn
-            // 
-            this.workdescriptionDataGridViewTextBoxColumn.DataPropertyName = "work_description";
-            this.workdescriptionDataGridViewTextBoxColumn.HeaderText = "work_description";
-            this.workdescriptionDataGridViewTextBoxColumn.Name = "workdescriptionDataGridViewTextBoxColumn";
+            this.dataGridView2.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
             // 
             // workLogBindingSource
             // 
@@ -161,9 +138,9 @@
             // 
             // AddWorkerButton
             // 
-            this.AddWorkerButton.Location = new System.Drawing.Point(640, 25);
+            this.AddWorkerButton.Location = new System.Drawing.Point(378, 6);
             this.AddWorkerButton.Name = "AddWorkerButton";
-            this.AddWorkerButton.Size = new System.Drawing.Size(161, 45);
+            this.AddWorkerButton.Size = new System.Drawing.Size(125, 43);
             this.AddWorkerButton.TabIndex = 11;
             this.AddWorkerButton.Text = "Добавить работника";
             this.AddWorkerButton.UseVisualStyleBackColor = true;
@@ -171,9 +148,9 @@
             // 
             // EditWorkerButton
             // 
-            this.EditWorkerButton.Location = new System.Drawing.Point(640, 90);
+            this.EditWorkerButton.Location = new System.Drawing.Point(378, 62);
             this.EditWorkerButton.Name = "EditWorkerButton";
-            this.EditWorkerButton.Size = new System.Drawing.Size(161, 45);
+            this.EditWorkerButton.Size = new System.Drawing.Size(127, 43);
             this.EditWorkerButton.TabIndex = 11;
             this.EditWorkerButton.Text = "Редактировать работника";
             this.EditWorkerButton.UseVisualStyleBackColor = true;
@@ -181,9 +158,9 @@
             // 
             // DeleteWorkerButton
             // 
-            this.DeleteWorkerButton.Location = new System.Drawing.Point(640, 155);
+            this.DeleteWorkerButton.Location = new System.Drawing.Point(378, 119);
             this.DeleteWorkerButton.Name = "DeleteWorkerButton";
-            this.DeleteWorkerButton.Size = new System.Drawing.Size(161, 45);
+            this.DeleteWorkerButton.Size = new System.Drawing.Size(125, 43);
             this.DeleteWorkerButton.TabIndex = 4;
             this.DeleteWorkerButton.Text = "Удалить работника";
             this.DeleteWorkerButton.UseVisualStyleBackColor = true;
@@ -191,9 +168,9 @@
             // 
             // AddWorkLogButton
             // 
-            this.AddWorkLogButton.Location = new System.Drawing.Point(640, 221);
+            this.AddWorkLogButton.Location = new System.Drawing.Point(378, 181);
             this.AddWorkLogButton.Name = "AddWorkLogButton";
-            this.AddWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.AddWorkLogButton.Size = new System.Drawing.Size(125, 43);
             this.AddWorkLogButton.TabIndex = 5;
             this.AddWorkLogButton.Text = "Добавить выполненную работу";
             this.AddWorkLogButton.UseVisualStyleBackColor = true;
@@ -201,9 +178,9 @@
             // 
             // EditWorkLogButton
             // 
-            this.EditWorkLogButton.Location = new System.Drawing.Point(640, 287);
+            this.EditWorkLogButton.Location = new System.Drawing.Point(378, 246);
             this.EditWorkLogButton.Name = "EditWorkLogButton";
-            this.EditWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.EditWorkLogButton.Size = new System.Drawing.Size(125, 39);
             this.EditWorkLogButton.TabIndex = 6;
             this.EditWorkLogButton.Text = "Редактировать выполенную работу";
             this.EditWorkLogButton.UseVisualStyleBackColor = true;
@@ -211,9 +188,9 @@
             // 
             // DeleteWorkLogButton
             // 
-            this.DeleteWorkLogButton.Location = new System.Drawing.Point(640, 358);
+            this.DeleteWorkLogButton.Location = new System.Drawing.Point(378, 307);
             this.DeleteWorkLogButton.Name = "DeleteWorkLogButton";
-            this.DeleteWorkLogButton.Size = new System.Drawing.Size(161, 45);
+            this.DeleteWorkLogButton.Size = new System.Drawing.Size(125, 39);
             this.DeleteWorkLogButton.TabIndex = 7;
             this.DeleteWorkLogButton.Text = "Удалить выполненную работу";
             this.DeleteWorkLogButton.UseVisualStyleBackColor = true;
@@ -224,11 +201,43 @@
             this.workerBindingSource.DataMember = "Worker";
             this.workerBindingSource.DataSource = this.dataSet1;
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // workeridDataGridViewTextBoxColumn
+            // 
+            this.workeridDataGridViewTextBoxColumn.DataPropertyName = "worker_id";
+            this.workeridDataGridViewTextBoxColumn.HeaderText = "Идентификатор работника";
+            this.workeridDataGridViewTextBoxColumn.Name = "workeridDataGridViewTextBoxColumn";
+            this.workeridDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // startedatDataGridViewTextBoxColumn
+            // 
+            this.startedatDataGridViewTextBoxColumn.DataPropertyName = "started_at";
+            this.startedatDataGridViewTextBoxColumn.HeaderText = "Начало работы";
+            this.startedatDataGridViewTextBoxColumn.Name = "startedatDataGridViewTextBoxColumn";
+            // 
+            // endedatDataGridViewTextBoxColumn
+            // 
+            this.endedatDataGridViewTextBoxColumn.DataPropertyName = "ended_at";
+            this.endedatDataGridViewTextBoxColumn.HeaderText = "Конец работы";
+            this.endedatDataGridViewTextBoxColumn.Name = "endedatDataGridViewTextBoxColumn";
+            // 
+            // workdescriptionDataGridViewTextBoxColumn
+            // 
+            this.workdescriptionDataGridViewTextBoxColumn.DataPropertyName = "work_description";
+            this.workdescriptionDataGridViewTextBoxColumn.HeaderText = "Описание работы";
+            this.workdescriptionDataGridViewTextBoxColumn.Name = "workdescriptionDataGridViewTextBoxColumn";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 504);
+            this.ClientSize = new System.Drawing.Size(513, 359);
             this.Controls.Add(this.DeleteWorkLogButton);
             this.Controls.Add(this.EditWorkLogButton);
             this.Controls.Add(this.AddWorkLogButton);
@@ -239,7 +248,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Text = "Main";
+            this.Text = "Основная форма";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource1)).EndInit();
@@ -255,17 +264,8 @@
         private System.Windows.Forms.BindingSource workerBindingSource;
         private db.DataSet1 dataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn innDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource workerBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workeridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startedatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endedatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workdescriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource workLogBindingSource;
         private System.Windows.Forms.Button AddWorkerButton;
         private System.Windows.Forms.Button EditWorkerButton;
@@ -273,5 +273,14 @@
         private System.Windows.Forms.Button AddWorkLogButton;
         private System.Windows.Forms.Button EditWorkLogButton;
         private System.Windows.Forms.Button DeleteWorkLogButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn innDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workeridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startedatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endedatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workdescriptionDataGridViewTextBoxColumn;
     }
 }

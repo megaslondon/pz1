@@ -45,82 +45,85 @@ namespace PZ1.forms.workers
             // 
             // FIOTextBox
             // 
-            this.FIOTextBox.Location = new System.Drawing.Point(272, 46);
+            this.FIOTextBox.Location = new System.Drawing.Point(84, 11);
             this.FIOTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.FIOTextBox.Multiline = true;
             this.FIOTextBox.Name = "FIOTextBox";
             this.FIOTextBox.ShortcutsEnabled = false;
-            this.FIOTextBox.Size = new System.Drawing.Size(515, 40);
+            this.FIOTextBox.Size = new System.Drawing.Size(233, 29);
             this.FIOTextBox.TabIndex = 0;
+            this.FIOTextBox.TextChanged += new System.EventHandler(this.FIOTextBox_TextChanged);
             this.FIOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FIOTextBox_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(226, 59);
+            this.label1.Location = new System.Drawing.Point(43, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ФИО :";
+            this.label1.Text = "ФИО";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 151);
+            this.label2.Location = new System.Drawing.Point(4, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Должность :";
+            this.label2.Text = "Должность";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // RoleTextBox
             // 
-            this.RoleTextBox.Location = new System.Drawing.Point(272, 136);
+            this.RoleTextBox.Location = new System.Drawing.Point(84, 57);
             this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTextBox.Multiline = true;
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.ShortcutsEnabled = false;
-            this.RoleTextBox.Size = new System.Drawing.Size(515, 40);
+            this.RoleTextBox.Size = new System.Drawing.Size(233, 31);
             this.RoleTextBox.TabIndex = 1;
             this.RoleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RoleTextBox_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 235);
+            this.label3.Location = new System.Drawing.Point(44, 118);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
+            this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "ИНН :";
+            this.label3.Text = "ИНН";
             // 
             // INNTextBox
             // 
-            this.INNTextBox.Location = new System.Drawing.Point(272, 222);
+            this.INNTextBox.Location = new System.Drawing.Point(84, 109);
             this.INNTextBox.MaxLength = 12;
             this.INNTextBox.Multiline = true;
             this.INNTextBox.Name = "INNTextBox";
             this.INNTextBox.ShortcutsEnabled = false;
-            this.INNTextBox.Size = new System.Drawing.Size(515, 40);
+            this.INNTextBox.Size = new System.Drawing.Size(233, 33);
             this.INNTextBox.TabIndex = 2;
+            this.INNTextBox.TextChanged += new System.EventHandler(this.INNTextBox_TextChanged);
             this.INNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.INNTextBox_KeyPress);
             // 
             // goBackButton
             // 
-            this.goBackButton.Location = new System.Drawing.Point(12, 12);
+            this.goBackButton.Location = new System.Drawing.Point(236, 153);
             this.goBackButton.Name = "goBackButton";
-            this.goBackButton.Size = new System.Drawing.Size(103, 37);
+            this.goBackButton.Size = new System.Drawing.Size(81, 37);
             this.goBackButton.TabIndex = 4;
-            this.goBackButton.Text = "Назад";
+            this.goBackButton.Text = "Отмена";
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // AddWorkerButton
             // 
-            this.AddWorkerButton.Location = new System.Drawing.Point(685, 289);
+            this.AddWorkerButton.Location = new System.Drawing.Point(147, 153);
             this.AddWorkerButton.Name = "AddWorkerButton";
-            this.AddWorkerButton.Size = new System.Drawing.Size(102, 37);
+            this.AddWorkerButton.Size = new System.Drawing.Size(83, 37);
             this.AddWorkerButton.TabIndex = 3;
             this.AddWorkerButton.Text = "Добавить";
             this.AddWorkerButton.UseVisualStyleBackColor = true;
@@ -130,7 +133,7 @@ namespace PZ1.forms.workers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 554);
+            this.ClientSize = new System.Drawing.Size(327, 201);
             this.Controls.Add(this.AddWorkerButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.label3);
@@ -142,7 +145,7 @@ namespace PZ1.forms.workers
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddWorkerForm";
-            this.Text = "AddWorkerForm";
+            this.Text = "Форма добавления работника";
             this.ResumeLayout(false);
             this.PerformLayout();
 

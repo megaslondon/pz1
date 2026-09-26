@@ -120,5 +120,20 @@ namespace PZ1.forms.workers
                 e.Handled = true;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void INNTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FIOTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
